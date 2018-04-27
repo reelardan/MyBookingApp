@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/*
+/* 
 | -------------------------------------------------------------------
 | AUTO-LOADER
 | -------------------------------------------------------------------
@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | 6. Language files
 | 7. Models
 |
-*/
+*/ 
 
 /*
 | -------------------------------------------------------------------
@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('database');
 
 /*
 | -------------------------------------------------------------------
