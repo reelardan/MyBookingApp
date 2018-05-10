@@ -5,7 +5,7 @@
 </head>
 <body>
 	<a href="http://localhost/MyBookingApp/Codeigniter/index.php/User/add">Tambah</a>
-	<table border="1">
+	<table border="1"> 
 		<tr><!--td ke ssamping tr kebawah-->
 			<td>id</td>
 			<td>username</td>

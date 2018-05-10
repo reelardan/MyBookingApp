@@ -33,10 +33,10 @@ class User extends CI_Controller {
 		if ($insert) {
 
 
-            echo "sukses";//jika proses memasukkan berhasil maka prin sukses dan sebaliknya
-
+            redirect('User','refresh');
+ 
         } else {
-
+ 
             echo "gagal";
 
         }
@@ -50,21 +50,21 @@ class User extends CI_Controller {
 
 			$data['isi'] = $this->db->get('user');//mengambil tabel user
 
-			$this->load->view('booking',$data);//meload form update untuk update file
+			$this->load->view('update',$data);//meload form update untuk update file
 		
 	}
 
-	public function gantikan( $id = '')
+	public function gantikan( $id = '' )
 	{
 		# code...
-		$input = array('username' => $this->input->post('username'),'password' => $this->input->post('password'),'fullname' => $this->input->post('fullname'),'level' => $this->input->post('level'));//menampung data update tadi kedalam array
-		$this->db->where('user_id',$id);//memasukkan id yg tadi sudah ditentukan lalu memilih id trsb
-		$insert=$this->db->update('user' , $input );//memasukkan data tai ke dalam tabel user
+		$input = array('username' => $this->input->post('username'),'password' => $this->input->post('password'),'fullname' => $this->input->post('fullname'),'level' => $this->input->post('level'));
+		$this->db->where('user_id',$id);
+		$insert=$this->db->update('user',$input );
 
 		if ($insert) {
 
 
-            echo "sukses";
+            redirect('User','refresh');
 
         } else {
 
@@ -81,7 +81,7 @@ class User extends CI_Controller {
 
 			$this->db->delete('user');//menghapus tabel /id yg sudah dipilih
 
-			redirect('user','refresh');//kembali ke controller User dan melakukan refresh page
+			redirect('User','refresh');//kembaloyyi ke controller User dan melakukan refresh page
 
 		/*if($this->input->post('submit'))
 		{
